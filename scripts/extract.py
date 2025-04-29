@@ -6,8 +6,8 @@ load_dotenv()
 
 def download_from_s3():
     s3 = boto3.client('s3',
-                      aws_access_key_id=os.getenv('AKIAS74TMDCP3GJNPR6I'),
-                      aws_secret_access_key=os.getenv('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'),
+                      aws_access_key_id=os.getenv('AKIAS74TMDCP3GJNPRI'),
+                      aws_secret_access_key=os.getenv('N5g3Lm3BtZFUVe7DJdyhoqdkzApbdYuUJlunljZ'),
                       region_name=os.getenv('ap-southeast-2'))
 
     bucket_name = os.getenv('salesdatafaris22')
