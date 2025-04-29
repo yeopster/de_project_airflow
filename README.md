@@ -1,1 +1,32 @@
-# de_project_airflow
+# Daily Sales ETL Pipeline
+
+## Overview
+This project builds an ETL pipeline that:
+- Extracts daily sales CSV data from AWS S3
+- Transforms (cleans, aggregates) the data
+- Loads it into a PostgreSQL database
+- Runs daily using Apache Airflow
+
+## Project Structure
+- dags/: Airflow DAGs
+- scripts/: Python ETL scripts
+- tests/: Unit tests
+- docker-compose.yaml: Setup for Airflow + Postgres
+- sample_data/: Sample CSV data
+
+## Setup Instructions
+1. Create a .env file with AWS credentials.
+2. Run:
+   
+Bash
+
+
+    docker-compose up
+    
+3. Access Airflow UI: http://localhost:8080
+    - Login: admin / admin
+4. Trigger the daily_sales_etl DAG.
+
+## Notes
+- PostgreSQL is available on localhost:5432
+- Sample table created: sales_summary
