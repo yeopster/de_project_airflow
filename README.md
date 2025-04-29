@@ -12,7 +12,7 @@ This project builds an ETL pipeline that:
 - scripts/: Python ETL scripts
 - tests/: Unit tests
 - docker-compose.yaml: Setup for Airflow + Postgres
-- sample_data/: Sample CSV data
+- sales_data_sample/: Sample CSV data
 
 ## Setup Instructions
 1. Create a .env file with AWS credentials.
