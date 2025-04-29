@@ -20,7 +20,7 @@ This project builds an ETL pipeline that:
    docker-compose up -d
     
 3. Access Airflow UI: http://localhost:8080
-    - Login: admin / admin
+    - Login: airflow / airflow
 4. Trigger the etl_pipelines DAG.
 
 ## Notes
