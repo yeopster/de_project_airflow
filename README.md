@@ -17,15 +17,11 @@ This project builds an ETL pipeline that:
 ## Setup Instructions
 1. Create a .env file with AWS credentials.
 2. Run:
-   
-Bash
-
-
-    docker-compose up
+   docker-compose up -d
     
 3. Access Airflow UI: http://localhost:8080
     - Login: admin / admin
-4. Trigger the daily_sales_etl DAG.
+4. Trigger the etl_pipelines DAG.
 
 ## Notes
 - PostgreSQL is available on localhost:5432
