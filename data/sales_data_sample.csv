@@ -1,0 +1,11 @@
+order_id,order_date,product_category,amount
+1001,2024-12-01,Electronics,350.50
+1002,2024-12-01,Furniture,125.00
+1003,2024-12-02,Electronics,199.99
+1004,2024-12-03,Furniture,400.00
+1005,2024-12-03,Clothing,59.99
+1006,2024-12-04,Clothing,89.99
+1007,2024-12-05,Electronics,120.00
+1008,2024-12-05,Clothing,45.00
+1009,2024-12-06,Furniture,300.00
+1010,2024-12-07,Electronics,275.00
