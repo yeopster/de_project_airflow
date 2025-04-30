@@ -88,7 +88,7 @@ def load_to_postgres():
     print("Data successfully loaded into PostgreSQL.")
 
 with DAG(
-    dag_id='sales_etl_s3_to_postgres_no_dotenv',
+    dag_id='sales_etl_pipeline',
     default_args=default_args,
     description='ETL without dotenv: S3 to Postgres',
     schedule_interval='@daily',
