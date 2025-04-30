@@ -39,14 +39,14 @@ with DAG(
         python_callable=transform_data,
     )
 
-    load_task = PythonOperator(
-        task_id='load_to_postgres',
-        python_callable=load_to_postgres,
-    )
-
     dq_check_task = PythonOperator(
         task_id='data_quality_check',
         python_callable=data_quality_check,
     )
 
-    extract_task >> transform_task >> load_task >> dq_check_task
+    load_task = PythonOperator(
+        task_id='load_to_postgres',
+        python_callable=load_to_postgres,
+    )
+
+    extract_task >> transform_task >> dq_check_task >> load_task
