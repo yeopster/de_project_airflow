@@ -12,7 +12,6 @@ default_args = {
     'retry_delay': timedelta(minutes=2)
 }
 
-# === Hardcoded S3 and AWS details ===
 AWS_ACCESS_KEY_ID = 'AKIAS74TMDCP3GJNPR6'
 AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY'
 AWS_REGION = 'ap-southeast-2'
