@@ -26,4 +26,4 @@ This project builds an ETL pipeline that:
 ## Notes
 - PostgreSQL is available on localhost:5432
 - Sample table created: sales_summary
-- For testing run the code in the terminal "airflow dags test sales_etl_pipeline 2024-12-01"
+- For testing run the code in the terminal "airflow dags test sales_etl_pipeline 2025-04-27"
