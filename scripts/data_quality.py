@@ -1,19 +1,9 @@
-from sqlalchemy import create_engine
-from airflow.models import Variable
-
 def data_quality_check():
-  
-    db_conn_str = Variable.get("db_conn_str")
+    df = pd.read_csv('/tmp/sales_data_transformed.csv')
 
-    engine = create_engine(db_conn_str)
+    if df.empty:
+        raise ValueError("Data quality check failed: DataFrame is empty.")
+    if df.isnull().sum().any():
+        raise ValueError("Data quality check failed: Null values found.")
 
-    query = "SELECT COUNT(*) FROM sales_summary"
-
-    with engine.connect() as connection:
-        result = connection.execute(query)
-        count = result.scalar()
-
-    if count == 0:
-        raise ValueError("Data quality check failed: no rows in sales_summary table")
-
-    print(f"Data quality check passed: {count} rows found.")
+    print("Data quality check passed.")
