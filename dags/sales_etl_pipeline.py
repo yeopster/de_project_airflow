@@ -91,7 +91,7 @@ with DAG(
     default_args=default_args,
     description='ETL without dotenv: S3 to Postgres',
     schedule_interval='@daily',
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2025, 4, 27),
     catchup=False
 ) as dag:
 
