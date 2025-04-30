@@ -6,6 +6,6 @@ RUN pip install --no-cache-dir -r requirement.txt
 
 COPY dags /opt/airflow/dags
 COPY scripts /opt/airflow/scripts
-COPY airflow dags test sales_etl_pipeline 2024-12-01
+COPY airflow dags test sales_etl_pipeline 2025-04-27
 
 USER airflow
