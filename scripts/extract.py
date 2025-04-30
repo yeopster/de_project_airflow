@@ -1,19 +1,19 @@
 import boto3
-import os
-from dotenv import load_dotenv
+import pandas as pd
 
-load_dotenv()
+AWS_ACCESS_KEY_ID = 'AKIAS74TMDCP3GJNPR6'
+AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY'
+AWS_REGION = 'ap-southeast-2'
+BUCKET_NAME = 'salesdatafaris22'
+S3_KEY = 'sales_data_sample.csv'
 
 def download_from_s3():
     s3 = boto3.client('s3',
-                      aws_access_key_id=os.getenv('AKIAS74TMDCP3GJNPRI'),
-                      aws_secret_access_key=os.getenv('N5g3Lm3BtZFUVe7DJdyhoqdkzApbdYuUJlunljZ'),
-                      region_name=os.getenv('ap-southeast-2'))
+                      aws_access_key_id=AWS_ACCESS_KEY_ID,
+                      aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+                      region_name=AWS_REGION)
 
-    bucket_name = os.getenv('salesdatafaris22')
-    prefix = os.getenv('sales_data_sample.csv')
-
-    response = s3.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+    response = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=S3_KEY)
     objects = response.get('Contents', [])
 
     if not objects:
@@ -23,6 +23,6 @@ def download_from_s3():
     file_key = latest_file['Key']
 
     local_filename = '/tmp/sales_data.csv'
-    s3.download_file(bucket_name, file_key, local_filename)
+    s3.download_file(BUCKET_NAME, file_key, local_filename)
 
     print(f"Downloaded {file_key} to {local_filename}")
